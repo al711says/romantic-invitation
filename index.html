@@ -12,6 +12,7 @@
             align-items: center;
             height: 100vh;
             background: linear-gradient(135deg, #ffebf0, #d8ebf8);
+            text-align: center;
             margin: 0;
         }
         .heart {
@@ -46,15 +47,11 @@
             color: white;
             font-size: 20px;
             text-align: center;
-            transform: rotate(45deg);
-        }
-        @keyframes float {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0); }
+            transform: rotate(0); /* Убираем вращение текста */
+            padding: 20px;
         }
         button {
-            background-color: #ff6b81;
+            background-color: #ff4b66;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -69,6 +66,11 @@
         }
         audio {
             margin-top: 10px;
+        }
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
         }
     </style>
 </head>
