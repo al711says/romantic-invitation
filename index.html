@@ -55,6 +55,12 @@
             display: none;
             text-align: center;
         }
+        #photo {
+            display: none;
+            margin-top: 20px;
+            max-width: 100%;
+            height: auto;
+        }
         .sticker {
             position: absolute;
             font-size: 40px;
@@ -101,11 +107,9 @@
     <div class="circle">
         <div class="message">
             <h2>Приглашаю тебя на свидание, моя Любовь!</h2>
-            <span class="secret-message" style="display: block; text-align: center; font-size: 18px; font-style: italic; opacity: 0.8;">
-    Секретное послание для тебя…
-</span>
-
+            <span class="secret-message">Секретное послание для тебя…</span>
             <button onclick="showDetails()">Далее</button>
+            <button onclick="showPhoto()">Показать фото</button>
         </div>
         <div class="sparkle" style="top: 10px; left: 20px;"></div>
         <div class="sparkle" style="top: 30px; right: 20px;"></div>
@@ -120,11 +124,19 @@
         <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" 
         src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/357356375&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
     </div>
+
+    <img id="photo" src="https://raw.githubusercontent.com/al711says/romantic-invitation/main/WhatsApp%20Image%202025-02-05%20at%2002.36.46.jpeg" alt="Наше фото" />
+
     <script>
         function showDetails() {
             document.querySelector(".circle").style.display = "none";
             document.getElementById("details").style.display = "block";
         }
+
+        function showPhoto() {
+            document.getElementById("photo").style.display = "block";
+        }
     </script>
 </body>
 </html>
+
