@@ -27,6 +27,13 @@
             flex-direction: column;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             padding: 20px;
+            animation: pulse 2s infinite;
+            position: relative;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.95; }
+            100% { transform: scale(1); opacity: 1; }
         }
         .message {
             color: #ff6b81;
@@ -60,6 +67,32 @@
             bottom: 15%;
             right: 20%;
         }
+        .sparkle {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: sparkle 1.5s infinite;
+        }
+        @keyframes sparkle {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.5); opacity: 0.5; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .secret-message {
+            font-size: 14px;
+            color: #ff6b81;
+            position: absolute;
+            bottom: -20px;
+            opacity: 0.7;
+            animation: fadeIn 3s infinite alternate;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
     </style>
 </head>
 <body>
@@ -68,8 +101,16 @@
     <div class="circle">
         <div class="message">
             <h2>Приглашаю тебя на свидание, моя Любовь!</h2>
+            <span class="secret-message" style="display: block; text-align: center; font-size: 18px; font-style: italic; opacity: 0.8;">
+    Секретное послание для тебя…
+</span>
+
             <button onclick="showDetails()">Далее</button>
         </div>
+        <div class="sparkle" style="top: 10px; left: 20px;"></div>
+        <div class="sparkle" style="top: 30px; right: 20px;"></div>
+        <div class="sparkle" style="bottom: 15px; left: 50px;"></div>
+        <div class="sparkle" style="bottom: 20px; right: 30px;"></div>
     </div>
     <div id="details">
         <h3>Где и когда?</h3>
