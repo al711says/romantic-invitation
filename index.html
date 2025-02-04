@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Привет! Давайте поговорим!</title>
+    <title>Привет! Приглашение на свидание! </title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,20 +15,44 @@
             text-align: center;
             margin: 0;
         }
-        .container {
-            padding: 20px;
-            background: white;
-            border-radius: 50%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            width: 300px;
-            height: 300px;
+        .heart {
+            position: relative;
+            width: 250px;
+            height: 230px;
+            background-color: #ff6b81;
+            transform: rotate(-45deg);
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
+            overflow: hidden;
+            animation: float 4s infinite;
         }
-        #details {
-            display: none;
+        .heart::before, .heart::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 150px;
+            border-radius: 100px 100px 0 0;
+            background-color: #ff6b81;
+        }
+        .heart::before {
+            left: 50px;
+            top: 0;
+        }
+        .heart::after {
+            left: 0;
+            top: -50px;
+        }
+        .message {
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            transform: rotate(45deg);
+        }
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
         }
         button {
             background-color: #ff6b81;
@@ -40,44 +64,35 @@
             font-size: 16px;
             margin-top: 10px;
         }
-        .heart {
-            font-size: 50px;
-            position: absolute;
-            animation: float 4s infinite;
+        #details {
+            display: none;
+            text-align: center;
         }
-        .heart {
-            left: 50%;
-            top: 10%;
-            transform: translateX(-50%);
-        }
-        @keyframes float {
-            0% { transform: translateX(-50%) translateY(0); }
-            50% { transform: translateX(-50%) translateY(-10px); }
-            100% { transform: translateX(-50%) translateY(0); }
+        audio {
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
-    <span class="heart">💖</span>
-    <div class="container">
-        <div id="question">
-            <h2><i>Привет, как ты?</i></h2>
-            <button onclick="showDetails()">Давай поговорим</button>
+    <div class="heart">
+        <div class="message">
+            <h2><i>Приглашаю тебя на свидание, моя Любовь!</i></h2>
+            <button onclick="showDetails()">Далее</button>
         </div>
-        <div id="details">
-            <h3><i>Как ты себя чувствуешь?</i></h3>
-            <p><i>Ответ:</i> Всё отлично!</p>
-            <p><i>Время:</i> 20:00</p>
-            <p><i>Послушай этот трек:</i></p>
-            <audio controls>
-                <source src="https://youtu.be/o2K34Smz2iM" type="audio/mpeg">
-                Ваш браузер не поддерживает аудио.
-            </audio>
-        </div>
+    </div>
+    <div id="details">
+        <h3><i>Где и когда?</i></h3>
+        <p>📍 <i>Место:</i> Ресторан MÖTE</p>
+        <p>🕒 <i>Время:</i> Желательно 20:00</p>
+        <p>🎶 <i>Музыка для настроения:</i></p>
+        <audio controls>
+            <source src="https://youtu.be/o2K34Smz2iM?si=Prk2jBiF56uv_CdZ" type="audio/mpeg">
+            Ваш браузер не поддерживает аудио.
+        </audio>
     </div>
     <script>
         function showDetails() {
-            document.getElementById("question").style.display = "none";
+            document.querySelector(".heart").style.display = "none";
             document.getElementById("details").style.display = "block";
         }
     </script>
