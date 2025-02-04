@@ -67,9 +67,6 @@
             display: none;
             text-align: center;
         }
-        audio {
-            margin-top: 10px;
-        }
     </style>
 </head>
 <body>
@@ -84,10 +81,13 @@
         <p>📍 <i>Место:</i> Ресторан MÖTE</p>
         <p>🕒 <i>Время:</i> Желательно 20:00</p>
         <p>🎶 <i>Музыка для настроения:</i></p>
-        <audio controls>
-            <source src="https://youtu.be/o2K34Smz2iM?si=Prk2jBiF56uv_CdZ" type="audio/mpeg">
-            Ваш браузер не поддерживает аудио.
-        </audio>
+        <!-- Встраиваем плеер из SoundCloud -->
+        <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" 
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/357356375&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+        <div style="font-size: 10px; color: #cccccc; line-break: anywhere; word-break: normal; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif; font-weight: 100;">
+            <a href="https://soundcloud.com/facegucci" title="FACE" target="_blank" style="color: #cccccc; text-decoration: none;">FACE</a> · 
+            <a href="https://soundcloud.com/facegucci/24-na-7-prod-by-yusei" title="24 на 7 (prod. by Yusei)" target="_blank" style="color: #cccccc; text-decoration: none;">24 на 7 (prod. by Yusei)</a>
+        </div>
     </div>
     <script>
         function showDetails() {
