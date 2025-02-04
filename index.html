@@ -12,7 +12,6 @@
             align-items: center;
             height: 100vh;
             background: linear-gradient(135deg, #ffebf0, #d8ebf8);
-            text-align: center;
             margin: 0;
         }
         .heart {
@@ -47,11 +46,15 @@
             color: white;
             font-size: 20px;
             text-align: center;
-            transform: rotate(0); /* Убираем вращение текста */
-            padding: 20px;
+            transform: rotate(45deg);
+        }
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
         }
         button {
-            background-color: #ff4b66;
+            background-color: #ff6b81;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -64,13 +67,10 @@
             display: none;
             text-align: center;
         }
-        audio {
-            margin-top: 10px;
-        }
-        @keyframes float {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0); }
+        iframe {
+            margin-top: 20px;
+            width: 100%;
+            height: 300px;
         }
     </style>
 </head>
@@ -86,10 +86,13 @@
         <p>📍 <i>Место:</i> Ресторан MÖTE</p>
         <p>🕒 <i>Время:</i> Желательно 20:00</p>
         <p>🎶 <i>Музыка для настроения:</i></p>
-        <audio controls>
-            <source src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/357356375&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" type="audio/mpeg">
-            Ваш браузер не поддерживает аудио.
-        </audio>
+        <!-- Встраиваем плеер из SoundCloud -->
+        <iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/357356375&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" 
+        scrolling="no" frameborder="no" allow="autoplay"></iframe>
+        <div style="font-size: 10px; color: #cccccc; line-break: anywhere; word-break: normal; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif; font-weight: 100;">
+            <a href="https://soundcloud.com/facegucci" title="FACE" target="_blank" style="color: #cccccc; text-decoration: none;">FACE</a> · 
+            <a href="https://soundcloud.com/facegucci/24-na-7-prod-by-yusei" title="24 на 7 (prod. by Yusei)" target="_blank" style="color: #cccccc; text-decoration: none;">24 на 7 (prod. by Yusei)</a>
+        </div>
     </div>
     <script>
         function showDetails() {
